@@ -25,14 +25,14 @@ describe('CommentBox', () => {
 			component.find('textarea').simulate('change', 'new comment');
 		});
 
-    it('shows that text in the textarea', () => {
-      expect(component.find('textarea')).to.have.value('new comment');
-    });
+		it('shows that text in the textarea', () => {
+			expect(component.find('textarea')).to.have.value('new comment');
+		});
 
-    it('when submitted, clears the input', () => {
-      // console.log(component);
-      component.simulate('submit');
-      expect(component.find('textarea')).to.have.value('');
-    });
-  });
+		it('when submitted, clears the input', () => {
+			// console.log(component);
+			component.simulate('submit');
+			expect(component.find('textarea')).to.have.value('');
+		});
+	});
 });

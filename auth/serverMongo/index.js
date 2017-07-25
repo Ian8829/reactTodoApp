@@ -1,12 +1,13 @@
 // Main starting point of the application
-const express = require('express');
-const http = require('http');
-const bodyParser = require('body-parser');
-const morgan = require('morgan');
+import express from 'express';
+import http from 'http';
+import bodyParser from 'body-parser';
+import morgan from 'morgan';
+import mongoose from 'mongoose';
+import cors from 'cors';
+import router from './router';
+
 const app = express();
-const router = require('./router');
-const mongoose = require('mongoose');
-const cors = require('cors');
 
 // DB Setup
 mongoose.connect('mongodb://localhost:auth/auth');
