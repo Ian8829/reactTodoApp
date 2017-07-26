@@ -1,4 +1,5 @@
 import React from 'react';
 
 export default () =>
-  <div>Welcome to our slice of paradise</div>;
+	<div>Welcome to our slice of paradise</div>;
+
