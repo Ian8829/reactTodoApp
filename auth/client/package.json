@@ -2,7 +2,8 @@
   "scripts": {
     "start": "node ./node_modules/webpack-dev-server/bin/webpack-dev-server.js",
     "test": "jest --coverage",
-    "test:watch": "jest --watch"
+    "test:watch": "jest --watch",
+    "toolbox": "react-toolbox-themr"
   },
   "license": "ISC",
   "devDependencies": {
@@ -14,6 +15,7 @@
     "babel-preset-react": "^6.1.18",
     "chai": "^3.5.0",
     "chai-jquery": "^2.0.0",
+    "css-loader": "^0.28.4",
     "enzyme": "^2.9.1",
     "eslint": "^4.3.0",
     "eslint-config-airbnb": "^15.1.0",
@@ -21,26 +23,34 @@
     "eslint-plugin-jsx-a11y": "^6.0.2",
     "eslint-plugin-react": "^7.1.0",
     "expect": "^1.20.2",
+    "extract-text-webpack-plugin": "^3.0.0",
     "jest": "^20.0.4",
     "jest-cli": "^20.0.4",
     "jquery": "^2.2.1",
     "jsdom": "^8.1.0",
     "jsdom-global": "^3.0.2",
     "mocha": "^2.4.5",
+    "postcss-loader": "^2.0.6",
     "react-addons-test-utils": "^0.14.7",
     "react-test-renderer": "^15.6.1",
+    "sass-loader": "^6.0.6",
+    "style-loader": "^0.18.2",
+    "toolbox-loader": "^0.0.3",
     "webpack": "^1.12.9",
     "webpack-dev-server": "^1.14.0"
   },
   "dependencies": {
+    "autoprefixer": "^7.1.2",
     "axios": "^0.9.1",
     "babel-preset-stage-1": "^6.1.18",
     "lodash": "^3.10.1",
+    "path": "^0.12.7",
     "prop-types": "^15.5.10",
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
     "react-redux": "^4.0.0",
     "react-router": "^2.0.1",
+    "react-toolbox": "^2.0.0-beta.12",
     "redux": "^3.0.4",
     "redux-form": "^5.0.1",
     "redux-thunk": "^2.0.1"

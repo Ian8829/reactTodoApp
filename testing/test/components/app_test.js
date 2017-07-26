@@ -10,7 +10,7 @@ describe('App', () => {
 	});
 
 	it('shows a comment box', () => {
-		expect(component.find('.comment-box')).to.exist;
+		expect(component.find('.nav-link')).to.exist;
 	});
 
 	it('shows a comment list', () => {

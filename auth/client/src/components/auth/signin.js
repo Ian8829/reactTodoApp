@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { reduxForm } from 'redux-form';
+import { Button } from 'react-toolbox/lib/button';
 import * as actions from '../../actions';
 
 class Signin extends Component {
@@ -32,7 +33,7 @@ class Signin extends Component {
           <input {...password} type="password" className="form-control" />
         </fieldset>
         {this.renderAlert()}
-        <button action="submit" className="btn btn-primary">Sign in</button>
+        <button action="submit" className="btn btn-primary">Sign in??</button>
       </form>
     );
   }
