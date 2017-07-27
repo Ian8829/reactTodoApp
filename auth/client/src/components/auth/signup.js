@@ -17,27 +17,27 @@ const renderInput = (field) => {
 };
 
 class Signup extends Component {
-  handleFormSubmit(formProps) {
-    // Call action creator to sign up the user!
-    this.props.signupUser(formProps);
-  }
+	handleFormSubmit(formProps) {
+		// Call action creator to sign up the user!
+		this.props.signupUser(formProps);
+	}
 
-  renderAlert() {
-    if (this.props.errorMessage) {
-      return (
-        <div className="alert alert-danger">
-          <strong>Oops!</strong> {this.props.errorMessage}
-        </div>
-      );
-    }
-  }
+	renderAlert() {
+		if (this.props.errorMessage) {
+			return (
+				<div className="alert alert-danger">
+					<strong>Oops!</strong> {this.props.errorMessage}
+				</div>
+			);
+		}
+	}
 
-  render() {
-    const { handleSubmit } = this.props;
+	render() {
+		const { handleSubmit } = this.props;
 
-    return (
-      <Form onSubmit={ handleSubmit(this.handleFormSubmit.bind(this)) }>
-        <div className="form-group">
+		return (
+			<Form onSubmit={ handleSubmit(this.handleFormSubmit.bind(this)) }>
+				<div className="form-group">
 					<Field name="email" type="email" component={renderInput} label="Email" />
 				</div>
 				<div className="form-group">
@@ -49,36 +49,36 @@ class Signup extends Component {
 				{this.renderAlert()}
 				<button action="submit" className="btn btn-primary">Sign up!</button>
 				{/*<Button action="submit" raised primary >Sign up!</Button>*/}
-      </Form>
-    );
-  }
+			</Form>
+		);
+	}
 }
 
 function validate(formProps) {
-  const errors = {};
-  const { password, passwordConfirm, email } = formProps;
+	const errors = {};
+	const { password, passwordConfirm, email } = formProps;
 
-  if (!email) {
-    errors.email = 'Please enter an email';
-  }
+	if (!email) {
+		errors.email = 'Please enter an email';
+	}
 
-  if (!password) {
-    errors.password = 'Please enter a password';
-  }
+	if (!password) {
+		errors.password = 'Please enter a password';
+	}
 
-  if (!passwordConfirm) {
-    errors.passwordConfirm = 'Please enter a password confirmation';
-  }
+	if (!passwordConfirm) {
+		errors.passwordConfirm = 'Please enter a password confirmation';
+	}
 
-  if (password !== passwordConfirm) {
-    errors.password = 'Passwords must match';
-  }
+	if (password !== passwordConfirm) {
+		errors.password = 'Passwords must match';
+	}
 
-  return errors;
+	return errors;
 }
 
 function mapStateToProps(state) {
-  return { errorMessage: state.auth.error };
+	return { errorMessage: state.auth.error };
 }
 
 const form = reduxForm({ form: 'signup', validate });

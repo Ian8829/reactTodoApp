@@ -14,26 +14,26 @@ const renderInput = field => {
 };
 
 class Signin extends Component {
-  handleFormSubmit({ email, password }) {
-    // Need to do something to log user in
-    this.props.signinUser({ email, password });
-  }
+	handleFormSubmit({ email, password }) {
+		// Need to do something to log user in
+		this.props.signinUser({ email, password });
+	}
 
-  renderAlert() {
-    if (this.props.errorMessage) {
-      return (
-        <div className="alert alert-danger">
-          <strong>Oops!</strong> {this.props.errorMessage}
-        </div>
-      );
-    }
-  }
+	renderAlert() {
+		if (this.props.errorMessage) {
+			return (
+				<div className="alert alert-danger">
+					<strong>Oops!</strong> {this.props.errorMessage}
+				</div>
+			);
+		}
+	}
 
-  render() {
-    const { handleSubmit } = this.props;
+	render() {
+		const { handleSubmit } = this.props;
 
-    return (
-      <form onSubmit={handleSubmit(this.handleFormSubmit.bind(this))}>
+		return (
+			<form onSubmit={handleSubmit(this.handleFormSubmit.bind(this))}>
 				<div className="form-group">
 					<label>Email:</label>
 					<Field name="email" type="email" component={renderInput} />
@@ -46,15 +46,12 @@ class Signin extends Component {
 				<button action="submit" className="btn btn-primary">Sign in</button>
 				{/*<Button action="submit" raised primary>Sign in</Button>*/}
 			</form>
-    );
-  }
+		);
+	}
 }
 
 function mapStateToProps(state) {
-  return {
-  	errorMessage: state.auth.error,
-		form: state.form
-  };
+	return { errorMessage: state.auth.error, form: state.form };
 }
 
 Signin = connect(mapStateToProps, actions)(Signin);

@@ -5,10 +5,10 @@ import todos from './todos';
 import visibilityFilter from './visibilityFilter';
 
 const rootReducer = combineReducers({
-  form,
-  auth: authReducer,
-  todos,
-  visibilityFilter
+	form,
+	auth: authReducer,
+	todos,
+	visibilityFilter
 });
 
 export default rootReducer;
