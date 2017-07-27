@@ -1,5 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import {Button, IconButton} from 'react-toolbox/lib/button';
 import { addTodo } from '../actions';
 
 let AddTodo = ({ dispatch }) => {
@@ -22,9 +23,9 @@ let AddTodo = ({ dispatch }) => {
             input = node
           }}
         />
-        <button type="submit">
+        <Button type="submit" accent>
           Add Todo
-        </button>
+        </Button>
       </form>
     </div>
   );

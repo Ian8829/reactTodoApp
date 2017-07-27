@@ -7,8 +7,8 @@ export default () => (
 	<Card style={{width: '400px'}}>
 		<CardTitle
 			avatar="https://placeimg.com/80/80/animals"
-			title="Avatar style title"
-			subtitle="Subtitle here"
+			title="Todo"
+			subtitle="Todo List"
 		/>
 		<CardTitle
 			title="Welcome"
