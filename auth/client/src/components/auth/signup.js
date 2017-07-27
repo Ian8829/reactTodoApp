@@ -11,7 +11,7 @@ const renderInput = (field) => {
 		<div>
 			<label>{label}:</label>
 			<input {...input} type={type} className="form-control" />
-			{ touched && error && <div className="error">{ error }</div> }
+			{ touched && error && <div className="error">{error}</div> }
 		</div>
 	);
 };
