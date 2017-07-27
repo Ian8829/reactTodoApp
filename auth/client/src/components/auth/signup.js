@@ -9,8 +9,8 @@ const renderInput = (field) => {
 
 	return (
 		<div>
-			<label>{ label }:</label>
-			<input { ...input } type={ type } className="form-group" />
+			<label>{label}:</label>
+			<input {...input} type={type} className="form-control" />
 			{ touched && error && <div className="error">{ error }</div> }
 		</div>
 	);
