@@ -1,7 +1,17 @@
 import React, { Component } from 'react';
-import { reduxForm } from 'redux-form';
+import { reduxForm, Field } from 'redux-form';
 import { Button } from 'react-toolbox/lib/button';
+import { connect } from 'react-redux';
 import * as actions from '../../actions';
+
+const renderInput = field => {
+	const { input, type } = field;
+	return (
+		<div>
+			<input {...input} type={type} className="form-control" />
+		</div>
+	);
+};
 
 class Signin extends Component {
   handleFormSubmit({ email, password }) {
@@ -20,30 +30,32 @@ class Signin extends Component {
   }
 
   render() {
-    const { handleSubmit, fields: { email, password }} = this.props;
+    const { handleSubmit } = this.props;
 
     return (
       <form onSubmit={handleSubmit(this.handleFormSubmit.bind(this))}>
-        <fieldset className="form-group">
-          <label>Email:</label>
-          <input {...email} className="form-control" />
-        </fieldset>
-        <fieldset className="form-group">
-          <label>Password:</label>
-          <input {...password} type="password" className="form-control" />
-        </fieldset>
-        {this.renderAlert()}
-        <button action="submit" className="btn btn-primary">Sign in</button>
-      </form>
+				<div className="form-group">
+					<label>Email:</label>
+					<Field name="email" type="email" component={renderInput} />
+				</div>
+				<div className="form-group">
+					<label>Password:</label>
+					<Field name="password" type="password" component={renderInput} />
+				</div>
+				{this.renderAlert()}
+				<button action="submit" className="btn btn-primary">Sign in</button>
+			</form>
     );
   }
 }
 
 function mapStateToProps(state) {
-  return { errorMessage: state.auth.error };
+  return {
+  	errorMessage: state.auth.error,
+		form: state.form
+  };
 }
 
-export default reduxForm({
-  form: 'signin',
-  fields: ['email', 'password']
-}, mapStateToProps, actions)(Signin);
+Signin = connect(mapStateToProps, actions)(Signin);
+Signin = reduxForm({ form: 'signin' })(Signin);
+export default Signin;
