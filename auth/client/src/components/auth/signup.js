@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { reduxForm, Field, Form } from 'redux-form';
 import { connect } from 'react-redux';
+import { Button } from 'react-toolbox/lib/button';
 import * as actions from '../../actions';
 
 const renderInput = (field) => {
@@ -8,9 +9,9 @@ const renderInput = (field) => {
 
 	return (
 		<div>
-			<label>{label}:</label>
-			<input {...input} type={type} className="form-group" />
-			{ touched && error && <div className="error">{error}</div> }
+			<label>{ label }:</label>
+			<input { ...input } type={ type } className="form-group" />
+			{ touched && error && <div className="error">{ error }</div> }
 		</div>
 	);
 };
@@ -35,7 +36,7 @@ class Signup extends Component {
     const { handleSubmit } = this.props;
 
     return (
-      <Form onSubmit={handleSubmit(this.handleFormSubmit.bind(this))}>
+      <Form onSubmit={ handleSubmit(this.handleFormSubmit.bind(this)) }>
         <div className="form-group">
 					<Field name="email" type="email" component={renderInput} label="Email" />
 				</div>
@@ -47,6 +48,7 @@ class Signup extends Component {
 				</div>
 				{this.renderAlert()}
 				<button action="submit" className="btn btn-primary">Sign up!</button>
+				{/*<Button action="submit" raised primary >Sign up!</Button>*/}
       </Form>
     );
   }

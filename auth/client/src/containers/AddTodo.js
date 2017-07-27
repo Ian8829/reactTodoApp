@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import {Button, IconButton} from 'react-toolbox/lib/button';
+import { Button } from 'react-toolbox/lib/button';
 import { addTodo } from '../actions';
 
 let AddTodo = ({ dispatch }) => {

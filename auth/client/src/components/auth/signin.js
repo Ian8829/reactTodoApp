@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { reduxForm, Field } from 'redux-form';
-import { Button } from 'react-toolbox/lib/button';
 import { connect } from 'react-redux';
+import { Button } from 'react-toolbox/lib/button';
 import * as actions from '../../actions';
 
 const renderInput = field => {
@@ -44,6 +44,7 @@ class Signin extends Component {
 				</div>
 				{this.renderAlert()}
 				<button action="submit" className="btn btn-primary">Sign in</button>
+				{/*<Button action="submit" raised primary>Sign in</Button>*/}
 			</form>
     );
   }
