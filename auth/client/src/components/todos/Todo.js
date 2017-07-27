@@ -1,15 +1,19 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { List, ListItem } from 'react-toolbox/lib/list';
 
 const Todo = ({ onClick, completed, text }) => (
-	<li
-		onClick={onClick}
-		style={{
-			textDecoration: completed ? 'line-through' : 'none'
-		}}
-	>
-		{text}
-	</li>
+	<List selectable ripple>
+		<ListItem
+			onClick={onClick}
+			style={{
+				color: completed ? 'red' : 'none'
+			}}
+			caption={text}
+			avatar='https://dl.dropboxusercontent.com/u/2247264/assets/o.jpg'
+		>
+		</ListItem>
+	</List>
 );
 
 Todo.propTypes = {
